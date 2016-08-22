@@ -1,2 +1,4 @@
-/.idea
-Timer/Gemfile
+vendor
+.bundle
+.idea/
+.sass-cache/
