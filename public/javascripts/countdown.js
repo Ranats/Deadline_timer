@@ -1,5 +1,5 @@
 /**
- * Created by 3bdi1230 on 2016/05/17.
+ * Created by Coda. on 2016/05/17.
  */
 function set2fig(num) {
     // 数値が1桁だったら2桁の文字列にして返す
