@@ -1,3 +1,18 @@
 ---
 language: ruby
 script: bundle exec middleman build
+env:
+  global:
+    - GIT_COMMITER_NAME="Ranats"
+    - GIT_COMMITER_EMAIL="sopurani885@gmail.com"
+    - GIT_AUTHOR_NAME="Ranats"
+    - GIT_AUTHOR_EMAIL="sopurani885@gmail.com"
+before_script:
+  - git clone --quiet http://github.com/Ranats/Deadline_timer.git build
+  - pushd build
+  - git checkout -b gh-pages
+  - popd
+after_success:
+  - cd build
+  - git add -A
+  - git commit -m "Update"
