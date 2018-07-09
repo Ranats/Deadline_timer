@@ -44,3 +44,15 @@ page '/*.txt', layout: false
 #   activate :minify_css
 #   activate :minify_javascript
 # end
+
+helpers do
+  def hostUrl link
+    'https://Ranats.github.io/Deadline_timer' + link
+  end
+end
+
+configure :build do
+  activate :asset_hash
+  activate :asset_host, :host => 'https://Ranats.github.io/Deadline_timer'
+end
+
