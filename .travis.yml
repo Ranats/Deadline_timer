@@ -1,0 +1,19 @@
+language: ruby
+script: bundle exec middleman build
+env:
+  global:
+  - GIT_COMMITER_NAME="Ranats"
+  - GIT_COMMITER_EMAIL="sopurani885@gmail.com"
+  - GIT_AUTHOR_NAME="Ranats"
+  - GIT_AUTHOR_EMAIL="sopurani885@gmail.com"
+  - secure: BGXav6niBzj1kz2F2J0juRZ7m0lNdbcvbJTXQlKF4HLIftDPszHWC5i5HevMZ+NgSdBfWxEz/NnhObjRrt1JQTkz1A7sIcWwT3gpXIBNmimrLnMPrqumDChw/B4mwfe3nh2rsMRqebq/eJ42A+6PVtUrPKAqwWUGoqw704sfVTawYK2ix84LrMwnJw8GkV/9W3uhzr6CNHEhif9toK3ZU0GZa/Qx01ssKRa875d+une5Of3KbrKXEJAf3Qk8xZ1HBOKpahdzMnvcOXd3Hit3CuDG8SrzFldcvYYECzZz7Vhm9SHLFlb8fz3Szh5Bi0HHYAYA0m1wk2ZLzlODNIihyxy4J9opjr29He3Zp5u1YiEPbEgnZYi2l22TmRyewcSYZwATvNJNHPbDdAYTjd2aPRWIAnRUTO/l3+AvsYAsvNnsc1s9eKpwgL12cMu6hPO4HR4Pa/vgZ6NNIWzKUElS/Qyw21OZJgSs3onwsUezS+ABEVSviMpMDFDUVD9p7VI3REIqaz250/+WXei+vBoAVwJzVyl+jh2dxTXCTClgA2oBb8SaoGZbyB8PeZU0Bxv50vXSMzKvLlM9Oe5gDXLBeG5ujVXn6veI2SyWirV+1aI9A0r3fhHdktayoIZeysbd71GwFbdpE1RIWz6b/TSAcufsHq+G2ANXS4/89r2MSgA=
+before_script:
+- git clone --quiet http://github.com/Ranats/Deadline_timer.git build
+- pushd build
+- git checkout -b gh-pages
+- popd
+after_success:
+- cd build
+- git add -A
+- git commit -m "Update"
+- '[ "$TRAVIS_BRANCH" == "middleman" ] && [ $GH_TOKEN ] && git push --quiet https://$GH_TOKEN@github.com/Ranats/Deadline_timer.git gh-pages 2> /dev/null'
