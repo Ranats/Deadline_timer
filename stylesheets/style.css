@@ -50,11 +50,11 @@ footer {
 
 p {
   margin-left: 50px;
-  font-size: 8vw; }
+  font-size: 5vw; }
 
 p#RealtimeCountdownArea {
   text-align: center;
-  font-size: 5vw;
+  font-size: 8vw;
   padding: 50px; }
 
 select {
